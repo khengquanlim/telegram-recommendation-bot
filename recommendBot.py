@@ -4,10 +4,7 @@ from dotenv import load_dotenv
 from debug.recommendations import recommendations
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-# Load the .env file
 load_dotenv()
-
-# Get the token from environment variables
 bot_token = os.getenv("TELEGRAM_BOT_TOKEN")
 bot = telebot.TeleBot(bot_token)
 
