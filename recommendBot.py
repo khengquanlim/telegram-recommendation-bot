@@ -32,13 +32,10 @@ def download_csv_from_google_drive(file_id, output_file):
 file_id = os.getenv("FILE_ID")
 output_csv = os.getenv("OUTPUT_CSV")
 
-# Download the file
 download_csv_from_google_drive(file_id, output_csv)
 
-# Process the CSV data
 df = pd.read_csv(output_csv)
 
-# Filter or use the data based on 'Location' column
 def get_bars_by_region(region):
     region_bars = df[df['Location'].str.contains(region, case=False, na=False)]
     return region_bars.to_dict('records')
